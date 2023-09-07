@@ -8,19 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    let homes = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text("homes_found \(homes)")
+            .font(.system(size: 40.0))
+            .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+  static var previews: some View {
+      
+    Group {
+      // 1
+      ContentView()
+        .environment(\.locale, .init(identifier: "en"))
+      // 2
+      ContentView()
+        .environment(\.locale, .init(identifier: "es"))
     }
+  }
 }
